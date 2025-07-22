@@ -2,9 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>The Project</title>
+  <title>Project Description</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links li a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .description {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+  </style>
 </head>
-<body style="background-color:black; color:white; text-align:center;">
-  <h1>The Project Page</h1>
-</body>
-</html>
+<body>
+
+  <nav>
+    <div class="logo">NAU SAE Toolbox</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project.html">The Project</a></li>
+      <li><a href="team.html">SAE Toolbox Team</a></li>
+      <li><a href="documents.html">Documents</a></li>
+    </ul>
+  </nav>
+
+  <h1>Project Description</h1>
+
+  <div class="description">
+    <p>This project tasks us with creating and modifying 3-phase PMSG’s to be used in the CWC by the Energy Club here at NAU. It is referred to as the 3D Printed CWC-scale Generators project, but the 3D printed portion is a bit of a misnomer. It means these generators are small scale to be used in the CWC. NAU has experimented with custom generators in the past but has commonly ended up using drone motors that were later modified for the CWC. These generators have performed poorly and lead to problems with lead times and designing around commercially available products rather than custom ones built for the sole purpose of wind competition. To solve these problems, we will first test existing generators with the Energy Club’s dynamometer to characterize their performance. Then we will simulate the generators in Ansys Maxwell and MotorCAD, make modifications to current generator designs, and design our own generators to meet the specific design requirements.</p>
+
+    <p>The client of the project is NAU Professor David Willy who advises clubs like BAJA and the Energy Club and has over 20 years in the field of renewable energy. He is providing us with $500 to complete this project, which will be divided amongst the future tasks of testing, modifying, and making generators. We are also tasked by the Capstone professor, Carson Pete, with fundraising at least $300 to further fund our project. Through a combination of physical and monetary donations through family, friends, and a GoFundMe page, this $300 goal has already been achieved. Further fundraising w
