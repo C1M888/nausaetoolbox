@@ -2,26 +2,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>NAU SAE TOOLBOX</title>
-    <style>
-        body {
-            background-color: #f2f2f2;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin-top: 50px;
-        }
-        img {
-            max-width: 90%;
-            height: auto;
-        }
-        h1 {
-            color: #003366;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NAU SAE Toolbox</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: black;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #bbb;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links li a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header.hero {
+      text-align: center;
+      padding: 12rem 2rem 6rem 2rem;
+      background-color: black;
+    }
+
+    header.hero h1 {
+      font-size: 4rem;
+      letter-spacing: 2px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid white;
+      color: white;
+      text-decoration: none;
+      font-size: 1.25rem;
+    }
+
+    .scroll-down {
+      font-size: 2rem;
+      margin-top: 4rem;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      background-color: #111;
+      padding: 4rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .feature-box {
+      text-align: center;
+      max-width: 200px;
+    }
+
+    .feature-box img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: white;
+      padding: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .feature-box a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      padding: 6rem 2rem;
+      background-color: #111;
+      border-top: 1px solid #333;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+      text-align: center;
+    }
+
+    .sponsors {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+      padding-top: 2rem;
+    }
+
+    .sponsor-box {
+      text-align: center;
+    }
+
+    .sponsor-box img {
+      max-width: 300px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .sponsor-box.toyota img {
+      max-width: 400px;
+    }
+
+    .sponsor-box p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to the NAU SAE Toolbox Project</h1>
-    <img src="nau_toolbox_logo.jpg" alt="NAU SAE Toolbox Logo">
+
+  <nav>
+    <div class="logo">NAU SAE Toolbox</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#project">The Project</a></li>
+      <li><a href="#team">SAE Toolbox Team</a></li>
+      <li><a href="#documents">Documents</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="home">
+    <h1>WELCOME TO NAU SAE TOOLBOX</h1>
+    <a href="#project" class="btn">LEARN MORE</a>
+    <div class="scroll-down">&#x25BC;</div>
+  </header>
+
+  <div class="features">
+    <div class="feature-box">
+      <img src="https://img.icons8.com/ios-filled/100/brain.png" alt="Project" />
+      <a href="#project">The Project</a>
+    </div>
+    <div class="feature-box">
+      <img src="https://img.icons8.com/ios-filled/100/team.png" alt="Team" />
+      <a href="#team">SAE Toolbox Team</a>
+    </div>
+    <div class="feature-box">
+      <img src="https://img.icons8.com/ios-filled/100/document.png" alt="Documents" />
+      <a href="#documents">Documents</a>
+    </div>
+  </div>
+
+  <section id="project">
+    <h2>Sponsors</h2>
+    <div class="sponsors">
+      <div class="sponsor-box">
+        <img src="red_rock_logo.jpg" alt="Red Rock Manufacturing LLC" />
+        <p>Red Rock Manufacturing LLC</p>
+      </div>
+      <div class="sponsor-box toyota">
+        <img src="findlay_toyota_logo.jpg" alt="Findlay Toyota Flagstaff" />
+        <p>Findlay Toyota Flagstaff</p>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
