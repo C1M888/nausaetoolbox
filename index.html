@@ -27,21 +27,26 @@
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: bold;
       color: #bbb;
+      flex-shrink: 0;
     }
 
     .nav-links {
       list-style: none;
       display: flex;
       gap: 2rem;
+      margin-left: auto;
+      padding-right: 2rem;
     }
 
     .nav-links li a {
       color: #ccc;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1rem;
+      white-space: nowrap;
     }
 
     header.hero {
@@ -73,15 +78,18 @@
     .features {
       display: flex;
       justify-content: center;
-      gap: 3rem;
+      gap: 4rem;
       background-color: #111;
       padding: 4rem 2rem;
       flex-wrap: wrap;
     }
 
     .feature-box {
-      text-align: center;
-      max-width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 220px;
     }
 
     .feature-box img {
@@ -91,14 +99,14 @@
       background-color: white;
       padding: 10px;
       margin-bottom: 1rem;
+      object-fit: contain;
     }
 
     .feature-box a {
       color: #ccc;
       text-decoration: none;
       font-size: 1.1rem;
-      display: block;
-      margin-top: 0.5rem;
+      text-align: center;
     }
 
     section {
@@ -166,7 +174,7 @@
       <a href="#project">The Project</a>
     </div>
     <div class="feature-box">
-      <img src="https://img.icons8.com/ios-filled/100/team.png" alt="Team" />
+      <img src="https://img.icons8.com/ios-filled/100/group.png" alt="Team" />
       <a href="#team">SAE Toolbox Team</a>
     </div>
     <div class="feature-box">
@@ -178,13 +186,13 @@
   <section id="project">
     <h2>Sponsors</h2>
     <div class="sponsors">
-      <div class="sponsor-box">
-        <img src="red_rock_logo.jpg" alt="Red Rock Manufacturing LLC" />
-        <p>Red Rock Manufacturing LLC</p>
-      </div>
       <div class="sponsor-box toyota">
         <img src="findlay_toyota_logo.jpg" alt="Findlay Toyota Flagstaff" />
         <p>Findlay Toyota Flagstaff</p>
+      </div>
+      <div class="sponsor-box">
+        <img src="red_rock_logo.jpg" alt="Red Rock Manufacturing LLC" />
+        <p>Red Rock Manufacturing LLC</p>
       </div>
     </div>
   </section>
