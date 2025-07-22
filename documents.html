@@ -1,10 +1,90 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Documents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Documents - NAU SAE Toolbox</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: black;
+      color: white;
+    }
+    nav {
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #bbb;
+      flex-shrink: 0;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin-left: auto;
+      padding-right: 2rem;
+    }
+    .nav-links li a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .container {
+      padding-top: 7rem;
+      text-align: center;
+    }
+    .container img {
+      max-width: 70%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #444;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #666;
+    }
+  </style>
 </head>
-<body style="background-color:black; color:white; text-align:center;">
-  <h1>Documents Page</h1>
+<body>
+
+  <nav>
+    <div class="logo">NAU SAE Toolbox</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project.html">The Project</a></li>
+      <li><a href="team.html">SAE Toolbox Team</a></li>
+      <li><a href="documents.html">Documents</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <img src="group.jpg" alt="Group Photo">
+    <br>
+    <a href="SAE Toolbox Report 1 (1).pdf" class="btn" target="_blank">View Report 1</a>
+  </div>
+
 </body>
 </html>
