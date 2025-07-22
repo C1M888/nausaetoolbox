@@ -5,71 +5,81 @@
   <title>Project Description</title>
   <style>
     body {
+      margin: 0;
       background-color: black;
       color: white;
-      margin: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
     }
 
-    nav {
-      background-color: #111;
-      padding: 20px;
+    .navbar {
+      background-color: #121212;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .logo {
-      font-size: 20px;
-      color: white;
+    .navbar-left {
       font-weight: bold;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links li a {
       color: white;
+      font-size: 18px;
+    }
+
+    .navbar-right a {
+      color: white;
+      margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .nav-links li a:hover {
+    .navbar-right a:hover {
       text-decoration: underline;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+      text-align: left;
+      line-height: 1.6;
     }
 
     h1 {
       text-align: center;
-      margin-top: 30px;
-    }
-
-    .description {
-      padding: 40px;
-      max-width: 1000px;
-      margin: auto;
-      font-size: 1.1rem;
     }
   </style>
 </head>
 <body>
+  <div class="navbar">
+    <div class="navbar-left">NAU SAE Toolbox</div>
+    <div class="navbar-right">
+      <a href="index.html">Home</a>
+      <a href="project.html">The Project</a>
+      <a href="team.html">SAE Toolbox Team</a>
+      <a href="documents.html">Documents</a>
+    </div>
+  </div>
 
-  <nav>
-    <div class="logo">NAU SAE Toolbox</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="project.html">The Project</a></li>
-      <li><a href="team.html">SAE Toolbox Team</a></li>
-      <li><a href="documents.html">Documents</a></li>
+  <div class="content">
+    <h1>Project Description</h1>
+    <p>This project originated from a request by the NAU SAE Formula and Baja teams to design and build a custom toolbox cart that could meet the demands of their off-road competition environments and on-campus workshop activities. The cart was intended to solve several logistical problems the teams encountered:</p>
+    <ul>
+      <li>Difficulties transporting tools over gravel, grass, and uneven terrain during competitions.</li>
+      <li>A lack of organized, lockable storage for tools, spare parts, and safety equipment.</li>
+      <li>No built-in method to carry a fire extinguisher, which is required in pit areas.</li>
+      <li>Limited access to power sources for charging devices or operating tools in remote settings.</li>
+      <li>The need for a compact and ergonomic design that a single team member could operate efficiently.</li>
     </ul>
-  </nav>
-
-  <h1>Project Description</h1>
-
-  <div class="description">
-    <p>This project tasks us with creating and modifying 3-phase PMSG’s to be used in the CWC by the Energy Club here at NAU. It is referred to as the 3D Printed CWC-scale Generators project, but the 3D printed portion is a bit of a misnomer. It means these generators are small scale to be used in the CWC. NAU has experimented with custom generators in the past but has commonly ended up using drone motors that were later modified for the CWC. These generators have performed poorly and lead to problems with lead times and designing around commercially available products rather than custom ones built for the sole purpose of wind competition. To solve these problems, we will first test existing generators with the Energy Club’s dynamometer to characterize their performance. Then we will simulate the generators in Ansys Maxwell and MotorCAD, make modifications to current generator designs, and design our own generators to meet the specific design requirements.</p>
-
-    <p>The client of the project is NAU Professor David Willy who advises clubs like BAJA and the Energy Club and has over 20 years in the field of renewable energy. He is providing us with $500 to complete this project, which will be divided amongst the future tasks of testing, modifying, and making generators. We are also tasked by the Capstone professor, Carson Pete, with fundraising at least $300 to further fund our project. Through a combination of physical and monetary donations through family, friends, and a GoFundMe page, this $300 goal has already been achieved. Further fundraising w
+    <p>To address these issues, our team applied core engineering principles to create a mobile, functional, and robust toolbox solution. The final product includes:</p>
+    <ul>
+      <li>A welded steel frame designed for durability and off-road use.</li>
+      <li>10-inch rugged casters for enhanced mobility across rough surfaces.</li>
+      <li>Multiple lockable drawers and compartments to organize tools.</li>
+      <li>A built-in mounting bracket for a fire extinguisher.</li>
+      <li>An optional space for a portable power generator.</li>
+      <li>Additional features such as a workbench surface, tire rack, and umbrella holder for shaded repairs.</li>
+    </ul>
+    <p>This project provided an opportunity to integrate CAD design, FEA analysis, and real-world fabrication into a solution tailored to the specific needs of NAU’s SAE teams.</p>
+  </div>
+</body>
+</html>
