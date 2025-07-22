@@ -2,63 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Project Description</title>
   <style>
     body {
       margin: 0;
+      font-family: 'Arial', sans-serif;
       background-color: black;
       color: white;
-      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
-
-    .navbar {
-      background-color: #121212;
-      padding: 10px 20px;
+    nav {
+      background-color: #111;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
-
-    .navbar-left {
+    .logo {
+      font-size: 1.3rem;
       font-weight: bold;
-      color: white;
-      font-size: 18px;
+      color: #bbb;
+      flex-shrink: 0;
     }
-
-    .navbar-right a {
-      color: white;
-      margin-left: 20px;
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin-left: auto;
+      padding-right: 2rem;
+    }
+    .nav-links li a {
+      color: #ccc;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1rem;
+      white-space: nowrap;
     }
-
-    .navbar-right a:hover {
-      text-decoration: underline;
-    }
-
     .content {
       max-width: 800px;
-      margin: 50px auto;
-      padding: 0 20px;
-      text-align: left;
-      line-height: 1.6;
+      margin: 10rem auto 4rem auto;
+      padding: 0 2rem;
+      line-height: 1.8;
     }
-
     h1 {
       text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
     }
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <div class="navbar-left">NAU SAE Toolbox</div>
-    <div class="navbar-right">
-      <a href="index.html">Home</a>
-      <a href="project.html">The Project</a>
-      <a href="team.html">SAE Toolbox Team</a>
-      <a href="documents.html">Documents</a>
-    </div>
-  </div>
+
+  <nav>
+    <div class="logo">NAU SAE Toolbox</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project.html">The Project</a></li>
+      <li><a href="team.html">SAE Toolbox Team</a></li>
+      <li><a href="documents.html">Documents</a></li>
+    </ul>
+  </nav>
 
   <div class="content">
     <h1>Project Description</h1>
@@ -81,5 +89,6 @@
     </ul>
     <p>This project provided an opportunity to integrate CAD design, FEA analysis, and real-world fabrication into a solution tailored to the specific needs of NAU’s SAE teams.</p>
   </div>
+
 </body>
 </html>
