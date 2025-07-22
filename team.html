@@ -2,9 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SAE Toolbox Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    nav {
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #bbb;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: bold;
+    }
+
+    .container {
+      margin-top: 100px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .team-member {
+      background-color: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #444;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .team-member h3 {
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .team-member p {
+      color: #aaa;
+    }
+  </style>
 </head>
-<body style="background-color:black; color:white; text-align:center;">
-  <h1>SAE Toolbox Team Page</h1>
+<body>
+  <nav>
+    <div class="logo">NAU SAE Toolbox</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="project.html">The Project</a>
+      <a href="team.html">SAE Toolbox Team</a>
+      <a href="documents.html">Documents</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Our Team</h1>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="placeholder.png" alt="Hailey Hein">
+        <h3>Hailey Hein</h3>
+        <p><!-- Description here --></p>
+      </div>
+      <div class="team-member">
+        <img src="placeholder.png" alt="Derek Griffith">
+        <h3>Derek Griffith</h3>
+        <p><!-- Description here --></p>
+      </div>
+      <div class="team-member">
+        <img src="placeholder.png" alt="Wang Yanbo">
+        <h3>Wang Yanbo</h3>
+        <p><!-- Description here --></p>
+      </div>
+      <div class="team-member">
+        <img src="placeholder.png" alt="Li Haoran">
+        <h3>Li Haoran</h3>
+        <p><!-- Description here --></p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
