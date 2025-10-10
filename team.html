@@ -93,11 +93,16 @@
       color: #bbb;
     }
 
-    .linkedin-icon {
+    .icon-group {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.3rem;
+    }
+
+    .linkedin-icon, .doc-icon {
       width: 28px;
       height: 28px;
       border-radius: 4px;
-      background-color: #0077b5;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -105,11 +110,23 @@
       transition: background-color 0.2s ease;
     }
 
+    .linkedin-icon {
+      background-color: #0077b5;
+    }
+
     .linkedin-icon:hover {
       background-color: #0095e0;
     }
 
-    .linkedin-icon img {
+    .doc-icon {
+      background-color: #444;
+    }
+
+    .doc-icon:hover {
+      background-color: #666;
+    }
+
+    .linkedin-icon img, .doc-icon img {
       width: 16px;
       height: 16px;
     }
@@ -147,9 +164,14 @@
         <div class="member-info">
           <div class="member-name">Hailey Hein</div>
           <div class="member-role">Project Manager, CAD Engineer, Financial Manager</div>
-          <a href="https://www.linkedin.com/in/hailey-hein-2a517826b/" target="_blank" class="linkedin-icon">
-            <img src="linkedin.png" alt="LinkedIn">
-          </a>
+          <div class="icon-group">
+            <a href="https://www.linkedin.com/in/hailey-hein-2a517826b/" target="_blank" class="linkedin-icon">
+              <img src="linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="HeinResume.pdf" target="_blank" class="doc-icon">
+              <img src="https://img.icons8.com/ios-filled/100/document.png" alt="Document">
+            </a>
+          </div>
         </div>
         <div class="member-photo" style="background-image: url('hailey.jpg');"></div>
       </div>
@@ -158,9 +180,14 @@
         <div class="member-info">
           <div class="member-name">Derek Griffith</div>
           <div class="member-role">Prototype Engineer</div>
-          <a href="https://www.linkedin.com/in/derek-griffith-06a815256/" target="_blank" class="linkedin-icon">
-            <img src="linkedin.png" alt="LinkedIn">
-          </a>
+          <div class="icon-group">
+            <a href="https://www.linkedin.com/in/derek-griffith-06a815256/" target="_blank" class="linkedin-icon">
+              <img src="linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="Derek.pdf" target="_blank" class="doc-icon">
+              <img src="https://img.icons8.com/ios-filled/100/document.png" alt="Document">
+            </a>
+          </div>
         </div>
         <div class="member-photo" style="background-image: url('derek.jpg');"></div>
       </div>
@@ -169,9 +196,14 @@
         <div class="member-info">
           <div class="member-name">Yanbo Wang</div>
           <div class="member-role">Manufacturing Engineer, Website Manager</div>
-          <a href="https://www.linkedin.com/in/oneberry/" target="_blank" class="linkedin-icon">
-            <img src="linkedin.png" alt="LinkedIn">
-          </a>
+          <div class="icon-group">
+            <a href="https://www.linkedin.com/in/oneberry/" target="_blank" class="linkedin-icon">
+              <img src="linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="20250926 CV-Yanbo Wang.pdf" target="_blank" class="doc-icon">
+              <img src="https://img.icons8.com/ios-filled/100/document.png" alt="Document">
+            </a>
+          </div>
         </div>
         <div class="member-photo" style="background-image: url('yanbo.jpg');"></div>
       </div>
@@ -180,9 +212,14 @@
         <div class="member-info">
           <div class="member-name">Haoran Li</div>
           <div class="member-role">Test Engineer</div>
-          <a href="https://www.linkedin.com/in/haoran-li-a18912369/" target="_blank" class="linkedin-icon">
-            <img src="linkedin.png" alt="LinkedIn">
-          </a>
+          <div class="icon-group">
+            <a href="https://www.linkedin.com/in/haoran-li-a18912369/" target="_blank" class="linkedin-icon">
+              <img src="linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="Haoran Li.pdf" target="_blank" class="doc-icon">
+              <img src="https://img.icons8.com/ios-filled/100/document.png" alt="Document">
+            </a>
+          </div>
         </div>
         <div class="member-photo" style="background-image: url('haoran.jpg');"></div>
       </div>
