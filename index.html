@@ -12,6 +12,8 @@
       color: white;
       scroll-behavior: smooth;
     }
+
+    /* ---------------- NAV ---------------- */
     nav {
       background-color: #111;
       display: flex;
@@ -27,7 +29,6 @@
       font-size: 1.3rem;
       font-weight: bold;
       color: #bbb;
-      flex-shrink: 0;
     }
     .nav-links {
       list-style: none;
@@ -44,7 +45,7 @@
       white-space: nowrap;
     }
 
-    /* ---------- HERO SECTION (首页背景：101.jpg) ---------- */
+    /* ---------------- HERO SECTION ---------------- */
     header.hero {
       text-align: center;
       padding: 18rem 2rem 14rem 2rem;
@@ -54,7 +55,6 @@
       background-repeat: no-repeat;
       position: relative;
     }
-
     header.hero::before {
       content: "";
       position: absolute;
@@ -65,15 +65,12 @@
       background: rgba(0,0,0,0.45);
       z-index: 1;
     }
-
     header.hero h1,
     header.hero .btn,
     header.hero .scroll-down {
       position: relative;
       z-index: 2;
     }
-    /* ----------------------------------------------------- */
-
     header.hero h1 {
       font-size: 4rem;
       letter-spacing: 2px;
@@ -92,6 +89,7 @@
       margin-top: 2rem;
     }
 
+    /* ---------------- FEATURES ---------------- */
     .features {
       display: flex;
       justify-content: center;
@@ -123,14 +121,39 @@
       text-align: center;
     }
 
-    section {
-      padding: 6rem 2rem;
-      background-color: #111;
+    /* ---------------- SPONSORS SECTION ---------------- */
+    #project {
+      position: relative;
+      padding: 8rem 2rem;
       border-top: 1px solid #333;
+
+      background-image: url('sponsorbg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      /* 重点效果：背景固定，不随页面滚动 */
+      background-attachment: fixed;
     }
-    section h2 {
+
+    /* 遮罩层 */
+    #project::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+
+    #project h2,
+    #project .sponsors {
+      position: relative;
+      z-index: 2;
+    }
+
+    #project h2 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 3rem;
       color: #fff;
       text-align: center;
     }
@@ -157,6 +180,7 @@
       font-size: 1.2rem;
       color: #ccc;
     }
+
     .team-img {
       width: 90px !important;
       height: 90px !important;
@@ -164,39 +188,11 @@
       border-radius: 50%;
     }
 
-    /* ---------- Sponsors 区块背景图：sponsorbg.jpg ---------- */
-    #project {
-      position: relative;
-      padding: 10rem 2rem;
-      border-top: 1px solid #333;
-      background-image: url('sponsorbg.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    #project::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.55); /* 调暗度可以改这里 */
-      z-index: 1;
-    }
-
-    #project h2,
-    #project .sponsors {
-      position: relative;
-      z-index: 2;
-    }
-    /* ------------------------------------------------------ */
-
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
     <div class="logo">NAU SAE Toolbox</div>
     <ul class="nav-links">
@@ -207,12 +203,14 @@
     </ul>
   </nav>
 
+  <!-- HERO -->
   <header class="hero" id="home">
     <h1>WELCOME TO NAU SAE TOOLBOX</h1>
     <a href="project.html" class="btn">LEARN MORE</a>
     <div class="scroll-down">&#x25BC;</div>
   </header>
 
+  <!-- FEATURES -->
   <div class="features">
     <div class="feature-box">
       <img src="project.png" alt="Project" />
@@ -228,31 +226,39 @@
     </div>
   </div>
 
+  <!-- SPONSORS (背景固定) -->
   <section id="project">
     <h2>Sponsors</h2>
+
     <div class="sponsors">
       <div class="sponsor-box toyota">
         <img src="toyota.png" alt="Findlay Toyota Flagstaff" />
         <p>Findlay Toyota Flagstaff</p>
       </div>
+
       <div class="sponsor-box">
         <img src="lane-automotive.jpg" alt="Lane Automotive" />
         <p>Lane Automotive</p>
       </div>
+
       <div class="sponsor-box">
         <img src="lumberjack.png" alt="Lumberjack Motorsports" />
         <p>Lumberjack Motorsports</p>
       </div>
+
       <div class="sponsor-box">
         <img src="noaz.png" alt="Northern Arizona Signs" />
         <p>Northern Arizona Signs</p>
       </div>
+
       <div class="sponsor-box">
         <p><strong>Cayden MacCachren</strong><br/>Tire Carrier Fabrication</p>
       </div>
+
       <div class="sponsor-box">
         <p><strong>Craig Hein</strong><br/>Material Donation</p>
       </div>
+
       <div class="sponsor-box">
         <p><strong>Denise Griffith</strong><br/>Monetary Donation</p>
       </div>
