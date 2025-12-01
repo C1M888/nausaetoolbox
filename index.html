@@ -44,13 +44,13 @@
       white-space: nowrap;
     }
 
-    /* ---------- HERO SECTION (EXPANDED VERSION TO SHOW FULL CART) ---------- */
+    /* ---------- HERO SECTION (首页背景：101.jpg) ---------- */
     header.hero {
       text-align: center;
-      padding: 18rem 2rem 14rem 2rem;   /* <<< Hero 区域变大，完整显示竖图 */
+      padding: 18rem 2rem 14rem 2rem;
       background-image: url('101.jpg');
       background-size: cover;
-      background-position: center;  /* 让车子更容易出现在中间 */
+      background-position: center;
       background-repeat: no-repeat;
       position: relative;
     }
@@ -62,7 +62,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.45); /* 保证文字清晰 */
+      background: rgba(0,0,0,0.45);
       z-index: 1;
     }
 
@@ -70,9 +70,9 @@
     header.hero .btn,
     header.hero .scroll-down {
       position: relative;
-      z-index: 2; 
+      z-index: 2;
     }
-    /* ---------------------------------------------------------------------- */
+    /* ----------------------------------------------------- */
 
     header.hero h1 {
       font-size: 4rem;
@@ -91,6 +91,7 @@
       font-size: 2rem;
       margin-top: 2rem;
     }
+
     .features {
       display: flex;
       justify-content: center;
@@ -121,6 +122,7 @@
       font-size: 1.1rem;
       text-align: center;
     }
+
     section {
       padding: 6rem 2rem;
       background-color: #111;
@@ -132,6 +134,7 @@
       color: #fff;
       text-align: center;
     }
+
     .sponsors {
       display: flex;
       flex-direction: column;
@@ -160,6 +163,36 @@
       object-fit: cover;
       border-radius: 50%;
     }
+
+    /* ---------- Sponsors 区块背景图：sponsorbg.jpg ---------- */
+    #project {
+      position: relative;
+      padding: 10rem 2rem;
+      border-top: 1px solid #333;
+      background-image: url('sponsorbg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    #project::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55); /* 调暗度可以改这里 */
+      z-index: 1;
+    }
+
+    #project h2,
+    #project .sponsors {
+      position: relative;
+      z-index: 2;
+    }
+    /* ------------------------------------------------------ */
+
   </style>
 </head>
 <body>
