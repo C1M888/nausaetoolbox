@@ -43,6 +43,14 @@
       font-size: 1rem;
       white-space: nowrap;
     }
+
+    /* ⭐ 当前页面高亮 */
+    .nav-links li a.active {
+      color: white;
+      border-bottom: 2px solid white;
+      padding-bottom: 3px;
+    }
+
     .content {
       max-width: 800px;
       margin: 10rem auto 4rem auto;
@@ -86,11 +94,13 @@
 </head>
 <body>
 
+  <!-- ⭐ 导航栏已对齐 team.html，并设本页为 active -->
   <nav>
     <div class="logo">NAU SAE Toolbox</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="project.html">The Project</a></li>
+      <li><a class="active" href="project.html">The Project</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="team.html">SAE Toolbox Team</a></li>
       <li><a href="documents.html">Documents</a></li>
     </ul>
@@ -117,8 +127,6 @@
     </ul>
     <p>This project provided an opportunity to integrate CAD design, FEA analysis, and real-world fabrication into a solution tailored to the specific needs of NAU’s SAE teams.</p>
   </div>
-
-  <!-- ⬇️ 已删除 Manufacturing Highlights 部分 -->
 
   <!-- CAD Design Gallery -->
   <section class="gallery">
