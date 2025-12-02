@@ -10,10 +10,9 @@
       font-family: 'Arial', sans-serif;
       background-color: black;
       color: white;
-      scroll-behavior: smooth;
     }
 
-    /* ---------- NAV ---------- */
+    /* NAV */
     nav {
       background-color: #111;
       display: flex;
@@ -26,9 +25,9 @@
       z-index: 1000;
     }
     .logo {
+      color: #bbb;
       font-size: 1.3rem;
       font-weight: bold;
-      color: #bbb;
     }
     .nav-links {
       list-style: none;
@@ -39,237 +38,161 @@
     }
     .nav-links li a {
       color: #ccc;
-      text-decoration: none;
       font-weight: bold;
-      font-size: 1rem;
-      white-space: nowrap;
+      text-decoration: none;
     }
     .nav-links li a.active {
       color: #fff;
-      border-bottom: 2px solid #fff;
-      padding-bottom: 0.2rem;
+      border-bottom: 2px solid white;
+      padding-bottom: 3px;
     }
 
-    /* ---------- HERO ---------- */
-    .gallery-hero {
-      padding: 10rem 2rem 3rem 2rem;
+    /* HERO */
+    header {
+      padding: 10rem 2rem 4rem;
       text-align: center;
-      background-image: url('101.jpg'); /* 你也可以换成别的背景图 */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: url('101.jpg') center/cover no-repeat;
       position: relative;
     }
-    .gallery-hero::before {
+    header::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
+      background: rgba(0,0,0,0.6);
     }
-    .gallery-hero-content {
+    header * {
       position: relative;
       z-index: 2;
-      max-width: 800px;
-      margin: 0 auto;
     }
-    .gallery-hero h1 {
+    header h1 {
       font-size: 3rem;
       letter-spacing: 2px;
-      margin-bottom: 1rem;
-    }
-    .gallery-hero p {
-      font-size: 1.05rem;
-      color: #ddd;
-      line-height: 1.6;
     }
 
-    /* ---------- GALLERY GRID ---------- */
-    .gallery-wrapper {
+    /* GALLERY GRID */
+    .gallery {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
-    }
-
-    .gallery-grid {
+      padding: 2rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 1.2rem;
     }
-
     .gallery-item {
-      position: relative;
+      background: #111;
       overflow: hidden;
       border-radius: 10px;
-      background: #111;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: 0.25s;
     }
-
     .gallery-item img {
       width: 100%;
       height: 100%;
-      display: block;
       object-fit: cover;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      transition: 0.3s;
     }
-
-    .gallery-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.8);
-    }
-
     .gallery-item:hover img {
       transform: scale(1.05);
-      opacity: 0.95;
     }
 
-    /* ---------- Lightbox 预览 ---------- */
-    .lightbox {
+    /* LIGHTBOX */
+    #lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0,0,0,0.9);
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.25s ease;
+      transition: 0.3s;
       z-index: 2000;
     }
-
-    .lightbox.active {
+    #lightbox.active {
       opacity: 1;
       pointer-events: auto;
     }
-
-    .lightbox img {
+    #lightbox img {
       max-width: 90%;
       max-height: 85%;
       border-radius: 10px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.8);
     }
-
-    .lightbox-close {
+    #close {
       position: fixed;
-      top: 1.5rem;
-      right: 2rem;
-      font-size: 2rem;
-      color: #fff;
+      top: 20px;
+      right: 40px;
+      font-size: 2.5rem;
+      color: white;
       cursor: pointer;
-      user-select: none;
-    }
-
-    @media (max-width: 768px) {
-      .gallery-hero h1 {
-        font-size: 2.2rem;
-      }
-      .gallery-hero {
-        padding-top: 8rem;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="logo">NAU SAE Toolbox</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="project.html">The Project</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
-      <li><a href="team.html">SAE Toolbox Team</a></li>
-      <li><a href="documents.html">Documents</a></li>
-    </ul>
-  </nav>
+<nav>
+  <div class="logo">NAU SAE Toolbox</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="project.html">The Project</a></li>
+    <li><a class="active" href="gallery.html">Gallery</a></li>
+    <li><a href="team.html">SAE Toolbox Team</a></li>
+    <li><a href="documents.html">Documents</a></li>
+  </ul>
+</nav>
 
-  <!-- HERO -->
-  <header class="gallery-hero">
-    <div class="gallery-hero-content">
-      <h1>Gallery</h1>
-      <p>
-        A full visual record of the NAU SAE Toolbox build – scroll through every
-        photo from fabrication to final shots.
-      </p>
-    </div>
-  </header>
+<header>
+  <h1>Gallery</h1>
+</header>
 
-  <!-- GALLERY GRID -->
-  <main class="gallery-wrapper">
-    <div id="gallery-grid" class="gallery-grid">
-      <!-- JS 会在这里自动插入所有图片 -->
-    </div>
-  </main>
+<div class="gallery" id="gallery"></div>
 
-  <!-- Lightbox 预览 -->
-  <div id="lightbox" class="lightbox">
-    <div class="lightbox-close" id="lightbox-close">&times;</div>
-    <img id="lightbox-image" src="" alt="Preview">
-  </div>
+<div id="lightbox">
+  <div id="close">&times;</div>
+  <img id="lightbox-img" src="">
+</div>
 
-  <script>
-    const grid = document.getElementById('gallery-grid');
+<script>
+const gallery = document.getElementById("gallery");
 
-    // 通用：创建一个格子并插入到页面
-    function addImage(src) {
-      const item = document.createElement('div');
-      item.className = 'gallery-item';
+/* 添加图片函数 */
+function addImg(file) {
+  const div = document.createElement("div");
+  div.className = "gallery-item";
+  const img = document.createElement("img");
+  img.src = "gallery/" + file;
+  img.onerror = () => div.remove();
+  div.appendChild(img);
+  gallery.appendChild(div);
 
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = 'NAU SAE Toolbox photo';
+  div.onclick = () => {
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox").classList.add("active");
+  };
+}
 
-      // 如果文件不存在（404），就把这格删掉
-      img.onerror = () => {
-        item.remove();
-      };
+/* --------------------
+   加载 DSCN4089 → DSCN4140 
+-------------------- */
+for (let n = 4089; n <= 4140; n++) {
+  addImg(`DSCN${n}.JPG`);
+}
 
-      item.appendChild(img);
-      grid.appendChild(item);
-    }
+/* --------------------
+   加载 IMG_3954 → IMG_4711
+-------------------- */
+for (let n = 3954; n <= 4711; n++) {
+  addImg(`IMG_${n}.JPG`);
+}
 
-    // ---------- 1) DSCN4110.JPG ~ DSCN4140.JPG ----------
-    for (let n = 4110; n <= 4140; n++) {
-      addImage(`gallery/DSCN${n}.JPG`);
-    }
-
-    // ---------- 2) IMG_3954.JPG ~ IMG_4711.JPG ----------
-    for (let n = 3954; n <= 4711; n++) {
-      addImage(`gallery/IMG_${n}.JPG`);
-    }
-
-    // ---------- Lightbox：点击放大 ----------
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-image');
-    const lightboxClose = document.getElementById('lightbox-close');
-
-    grid.addEventListener('click', (e) => {
-      const target = e.target;
-      if (target.tagName.toLowerCase() === 'img') {
-        lightboxImg.src = target.src;
-        lightbox.classList.add('active');
-      }
-    });
-
-    lightboxClose.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.classList.remove('active');
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        lightbox.classList.remove('active');
-      }
-    });
-  </script>
+/* LIGHTBOX 关闭 */
+document.getElementById("close").onclick = () =>
+  document.getElementById("lightbox").classList.remove("active");
+document.getElementById("lightbox").onclick = (e) => {
+  if (e.target.id === "lightbox") {
+    document.getElementById("lightbox").classList.remove("active");
+  }
+};
+</script>
 
 </body>
 </html>
-
