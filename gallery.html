@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery - NAU SAE Toolbox</title>
 
   <style>
@@ -14,7 +14,7 @@
       scroll-behavior: smooth;
     }
 
-    /* Navigation bar */
+    /* NAV */
     nav {
       background-color: #111;
       display: flex;
@@ -50,7 +50,6 @@
       white-space: nowrap;
     }
 
-    /* Active page underline */
     .nav-links li a.active {
       color: white;
       border-bottom: 2px solid white;
@@ -60,22 +59,14 @@
     /* ---------- VIDEO SLIDER ---------- */
     .video-section {
       max-width: 1100px;
-      margin: 8rem auto 3rem auto;
+      margin: 8rem auto 2.5rem auto;  /* 顶部留出导航高度 */
       padding: 0 2rem;
-    }
-
-    .video-section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      letter-spacing: .5px;
     }
 
     .video-slider {
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
     }
 
     .video-wrapper {
@@ -87,6 +78,7 @@
       width: 100%;
       max-height: 520px;
       background: black;
+      display: block;
     }
 
     .video-arrow {
@@ -101,28 +93,14 @@
     }
 
     .video-arrow:hover {
-      color: #ddd;
+      color: #dddddd;
     }
 
-    .video-caption {
-      text-align: center;
-      font-size: 0.95rem;
-      margin-top: 0.75rem;
-      color: #ccc;
-    }
-
-    /* ---------- IMAGE GALLERY ---------- */
+    /* ---------- IMAGE GRID ---------- */
     .gallery {
       max-width: 1100px;
       margin: 0 auto 4rem auto;
       padding: 0 2rem;
-    }
-
-    .gallery h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin: 2rem 0 1.5rem 0;
-      letter-spacing: .5px;
     }
 
     .grid {
@@ -140,15 +118,16 @@
       display: block;
     }
 
-    @media (max-width: 520px){
-      .grid img{ height: 200px; }
+    @media (max-width: 520px) {
+      .grid img {
+        height: 200px;
+      }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Navigation -->
+  <!-- NAV -->
   <nav>
     <div class="logo">NAU SAE Toolbox</div>
     <ul class="nav-links">
@@ -160,79 +139,68 @@
     </ul>
   </nav>
 
-  <!-- ========== VIDEO SLIDER SECTION ========== -->
+  <!-- 顶部视频轮播（没有任何标题文字） -->
   <section class="video-section">
-    <h2>Video Highlights</h2>
-
     <div class="video-slider">
-      <!-- Left Arrow -->
+      <!-- 左箭头 -->
       <button class="video-arrow" id="videoPrev">&#10094;</button>
 
-      <!-- Video -->
+      <!-- 中间视频 -->
       <div class="video-wrapper">
         <video id="galleryVideo" controls preload="metadata"></video>
-        <div class="video-caption">
-          <span id="videoLabel"></span>
-        </div>
       </div>
 
-      <!-- Right Arrow -->
+      <!-- 右箭头 -->
       <button class="video-arrow" id="videoNext">&#10095;</button>
     </div>
   </section>
 
-  <!-- ========== IMAGE GALLERY SECTION (Your 154 pictures) ========== -->
+  <!-- 图片区域（你所有 154 张图都放这里） -->
   <section class="gallery">
-    <h2>Project Gallery</h2>
-
     <div class="grid">
-      <!-- 你原来的 154 张照片放在这里，我这里留空，由你粘贴 -->
-      <!-- <img src="DSCN4089.JPG"> -->
-      <!-- <img src="DSCN4090.JPG"> -->
-      <!-- ... your 154 images ... -->
+      <!--
+        把你原来那一长串 <img src="..."> 全部粘到这里。
+        示例：
+        <img src="gallery/DSCN4110.JPG" alt="">
+        <img src="gallery/DSCN4111.JPG" alt="">
+        ...
+      -->
     </div>
   </section>
 
-
-  <!-- ========== JAVASCRIPT ========== -->
   <script>
-    /*  
-      视频文件名你已经改好  
-      我这里做了 Manufacturing / Testing 分类命名  
-      老师会一眼看出来你整理得很专业  
-    */
+    // 如果 mp4 在 /gallery 文件夹，用 "gallery/xxx.mp4"
+    // 如果在根目录，把 "gallery/" 删掉即可
 
     const videoList = [
-      { src: "111.mp4", label: "Manufacturing – Drawer latch test" },
-      { src: "112.mp4", label: "Manufacturing – Wheel assembly rolling" },
-      { src: "113.mp4", label: "Manufacturing – Mobility test" },
-      { src: "114.mp4", label: "Manufacturing – Welded frame close-up" },
-      { src: "115.mp4", label: "Manufacturing – Caster movement check" },
-      { src: "116.mp4", label: "Manufacturing – Workbench fabrication" },
-      { src: "117.mp4", label: "Manufacturing – Frame grinding" },
-      { src: "118.mp4", label: "Manufacturing – MIG welding" },
-
-      { src: "119.mp4", label: "Testing – Outdoor rolling test" },
-      { src: "120.mp4", label: "Testing – Fire extinguisher mount check" },
-      { src: "121.mp4", label: "Testing – Distance mobility run" },
-      { src: "122.mp4", label: "Testing – Drawer operation test" },
-      { src: "123.mp4", label: "Testing – Handle pulling test" },
-      { src: "124.mp4", label: "Testing – Speed mobility test" },
-      { src: "125.mp4", label: "Testing – Turning radius test" },
-      { src: "126.mp4", label: "Testing – Endurance push test" }
+      { src: "gallery/111.mp4" },
+      { src: "gallery/112.mp4" },
+      { src: "gallery/113.mp4" },
+      { src: "gallery/114.mp4" },
+      { src: "gallery/115.mp4" },
+      { src: "gallery/116.mp4" },
+      { src: "gallery/117.mp4" },
+      { src: "gallery/118.mp4" },
+      { src: "gallery/119.mp4" },
+      { src: "gallery/120.mp4" },
+      { src: "gallery/121.mp4" },
+      { src: "gallery/122.mp4" },
+      { src: "gallery/123.mp4" },
+      { src: "gallery/124.mp4" },
+      { src: "gallery/125.mp4" },
+      { src: "gallery/126.mp4" }
     ];
 
     let currentVideoIndex = 0;
 
     const videoElement = document.getElementById("galleryVideo");
-    const labelElement = document.getElementById("videoLabel");
     const prevBtn = document.getElementById("videoPrev");
     const nextBtn = document.getElementById("videoNext");
 
     function loadVideo(index) {
       const v = videoList[index];
+      if (!v) return;
       videoElement.src = v.src;
-      labelElement.textContent = v.label;
     }
 
     prevBtn.addEventListener("click", () => {
