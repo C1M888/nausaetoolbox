@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gallery - NAU SAE Toolbox</title>
-
+  <title>NAU SAE Toolbox - Gallery</title>
   <style>
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
       background-color: black;
       color: white;
-      scroll-behavior: smooth;
     }
 
     /* NAV */
@@ -26,14 +24,11 @@
       top: 0;
       z-index: 1000;
     }
-
     .logo {
+      color: #bbb;
       font-size: 1.3rem;
       font-weight: bold;
-      color: #bbb;
-      flex-shrink: 0;
     }
-
     .nav-links {
       list-style: none;
       display: flex;
@@ -41,46 +36,61 @@
       margin-left: auto;
       padding-right: 2rem;
     }
-
     .nav-links li a {
       color: #ccc;
-      text-decoration: none;
       font-weight: bold;
-      font-size: 1rem;
-      white-space: nowrap;
+      text-decoration: none;
     }
-
     .nav-links li a.active {
-      color: white;
+      color: #fff;
       border-bottom: 2px solid white;
       padding-bottom: 3px;
     }
 
-    /* ---------- VIDEO SLIDER ---------- */
-    .video-section {
-      max-width: 1100px;
-      margin: 8rem auto 2.5rem auto;  /* 顶部留出导航高度 */
-      padding: 0 2rem;
+    /* HERO */
+    header {
+      padding: 10rem 2rem 4rem;
+      text-align: center;
+      background: url('101.jpg') center/cover no-repeat;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    header * {
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
     }
 
+    /* VIDEO SECTION（新加的视频区） */
+    .video-section {
+      max-width: 1100px;
+      margin: 0 auto 1.5rem auto;
+      padding: 0 2rem;
+    }
     .video-slider {
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
     .video-wrapper {
       width: 100%;
       max-width: 900px;
     }
-
     #galleryVideo {
       width: 100%;
       max-height: 520px;
       background: black;
       display: block;
+      border-radius: 8px;
     }
-
     .video-arrow {
       background: none;
       border: none;
@@ -91,132 +101,198 @@
       user-select: none;
       transition: color 0.2s;
     }
-
     .video-arrow:hover {
       color: #dddddd;
     }
 
-    /* ---------- IMAGE GRID ---------- */
+    /* GALLERY GRID */
     .gallery {
-      max-width: 1100px;
-      margin: 0 auto 4rem auto;
-      padding: 0 2rem;
-    }
-
-    .grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
     }
-
-    .grid img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
+    .gallery-item {
+      background: #111;
+      overflow: hidden;
       border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0,0,0,.4);
-      display: block;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.3s;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
     }
 
-    @media (max-width: 520px) {
-      .grid img {
-        height: 200px;
-      }
+    /* LIGHTBOX */
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+      z-index: 2000;
+    }
+    #lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 10px;
+    }
+    #close {
+      position: fixed;
+      top: 20px;
+      right: 40px;
+      font-size: 2.5rem;
+      color: white;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="logo">NAU SAE Toolbox</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="project.html">The Project</a></li>
-      <li><a class="active" href="gallery.html">Gallery</a></li>
-      <li><a href="team.html">SAE Toolbox Team</a></li>
-      <li><a href="documents.html">Documents</a></li>
-    </ul>
-  </nav>
+<nav>
+  <div class="logo">NAU SAE Toolbox</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="project.html">The Project</a></li>
+    <li><a class="active" href="gallery.html">Gallery</a></li>
+    <li><a href="team.html">SAE Toolbox Team</a></li>
+    <li><a href="documents.html">Documents</a></li>
+  </ul>
+</nav>
 
-  <!-- 顶部视频轮播（没有任何标题文字） -->
-  <section class="video-section">
-    <div class="video-slider">
-      <!-- 左箭头 -->
-      <button class="video-arrow" id="videoPrev">&#10094;</button>
+<header>
+  <h1>Gallery</h1>
+</header>
 
-      <!-- 中间视频 -->
-      <div class="video-wrapper">
-        <video id="galleryVideo" controls preload="metadata"></video>
-      </div>
+<!-- 🔹新加的视频轮播区：没有标题文字、没有简介 -->
+<section class="video-section">
+  <div class="video-slider">
+    <button class="video-arrow" id="videoPrev">&#10094;</button>
 
-      <!-- 右箭头 -->
-      <button class="video-arrow" id="videoNext">&#10095;</button>
+    <div class="video-wrapper">
+      <video id="galleryVideo" controls preload="metadata"></video>
     </div>
-  </section>
 
-  <!-- 图片区域（你所有 154 张图都放这里） -->
-  <section class="gallery">
-    <div class="grid">
-      <!--
-        把你原来那一长串 <img src="..."> 全部粘到这里。
-        示例：
-        <img src="gallery/DSCN4110.JPG" alt="">
-        <img src="gallery/DSCN4111.JPG" alt="">
-        ...
-      -->
-    </div>
-  </section>
+    <button class="video-arrow" id="videoNext">&#10095;</button>
+  </div>
+</section>
 
-  <script>
-    // 如果 mp4 在 /gallery 文件夹，用 "gallery/xxx.mp4"
-    // 如果在根目录，把 "gallery/" 删掉即可
+<!-- 原来的图片 gallery 保留 -->
+<div class="gallery" id="gallery"></div>
 
-    const videoList = [
-      { src: "gallery/111.mp4" },
-      { src: "gallery/112.mp4" },
-      { src: "gallery/113.mp4" },
-      { src: "gallery/114.mp4" },
-      { src: "gallery/115.mp4" },
-      { src: "gallery/116.mp4" },
-      { src: "gallery/117.mp4" },
-      { src: "gallery/118.mp4" },
-      { src: "gallery/119.mp4" },
-      { src: "gallery/120.mp4" },
-      { src: "gallery/121.mp4" },
-      { src: "gallery/122.mp4" },
-      { src: "gallery/123.mp4" },
-      { src: "gallery/124.mp4" },
-      { src: "gallery/125.mp4" },
-      { src: "gallery/126.mp4" }
-    ];
+<div id="lightbox">
+  <div id="close">&times;</div>
+  <img id="lightbox-img" src="">
+</div>
 
-    let currentVideoIndex = 0;
+<script>
+/* ========== 1. 视频轮播（新加） ========== */
+/* 如果视频在 /gallery 目录：用 "gallery/111.mp4" */
+/* 如果在根目录：把 "gallery/" 去掉就行 */
 
-    const videoElement = document.getElementById("galleryVideo");
-    const prevBtn = document.getElementById("videoPrev");
-    const nextBtn = document.getElementById("videoNext");
+const videoList = [
+  "gallery/111.mp4",
+  "gallery/112.mp4",
+  "gallery/113.mp4",
+  "gallery/114.mp4",
+  "gallery/115.mp4",
+  "gallery/116.mp4",
+  "gallery/117.mp4",
+  "gallery/118.mp4",
+  "gallery/119.mp4",
+  "gallery/120.mp4",
+  "gallery/121.mp4",
+  "gallery/122.mp4",
+  "gallery/123.mp4",
+  "gallery/124.mp4",
+  "gallery/125.mp4",
+  "gallery/126.mp4"
+];
 
-    function loadVideo(index) {
-      const v = videoList[index];
-      if (!v) return;
-      videoElement.src = v.src;
-    }
+let currentVideoIndex = 0;
+const videoElement = document.getElementById("galleryVideo");
+const prevBtn = document.getElementById("videoPrev");
+const nextBtn = document.getElementById("videoNext");
 
-    prevBtn.addEventListener("click", () => {
-      currentVideoIndex = (currentVideoIndex - 1 + videoList.length) % videoList.length;
-      loadVideo(currentVideoIndex);
-    });
+function loadVideo(index) {
+  if (!videoList[index]) return;
+  videoElement.src = videoList[index];
+}
 
-    nextBtn.addEventListener("click", () => {
-      currentVideoIndex = (currentVideoIndex + 1) % videoList.length;
-      loadVideo(currentVideoIndex);
-    });
+prevBtn.addEventListener("click", () => {
+  currentVideoIndex = (currentVideoIndex - 1 + videoList.length) % videoList.length;
+  loadVideo(currentVideoIndex);
+});
 
-    window.addEventListener("DOMContentLoaded", () => {
-      loadVideo(currentVideoIndex);
-    });
-  </script>
+nextBtn.addEventListener("click", () => {
+  currentVideoIndex = (currentVideoIndex + 1) % videoList.length;
+  loadVideo(currentVideoIndex);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  loadVideo(currentVideoIndex);
+});
+
+/* ========== 2. 下面是你原来的图片 gallery 代码，原样保留 ========== */
+
+const gallery = document.getElementById("gallery");
+
+/* 添加图片函数 */
+function addImg(file) {
+  const div = document.createElement("div");
+  div.className = "gallery-item";
+  const img = document.createElement("img");
+  img.src = "gallery/" + file;
+  img.onerror = () => div.remove();
+  div.appendChild(img);
+  gallery.appendChild(div);
+
+  div.onclick = () => {
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox").classList.add("active");
+  };
+}
+
+/* --------------------
+   加载 DSCN4089 → DSCN4140 
+-------------------- */
+for (let n = 4089; n <= 4140; n++) {
+  addImg(`DSCN${n}.JPG`);
+}
+
+/* --------------------
+   加载 IMG_3954 → IMG_4711
+-------------------- */
+for (let n = 3954; n <= 4711; n++) {
+  addImg(`IMG_${n}.JPG`);
+}
+
+/* LIGHTBOX 关闭 */
+document.getElementById("close").onclick = () =>
+  document.getElementById("lightbox").classList.remove("active");
+
+document.getElementById("lightbox").onclick = (e) => {
+  if (e.target.id === "lightbox") {
+    document.getElementById("lightbox").classList.remove("active");
+  }
+};
+</script>
 
 </body>
 </html>
