@@ -43,6 +43,14 @@
       font-size: 1rem;
       white-space: nowrap;
     }
+
+    /* ⭐ 当前页面高亮 */
+    .nav-links li a.active {
+      color: white;
+      border-bottom: 2px solid white;
+      padding-bottom: 3px;
+    }
+
     header.hero {
       text-align: center;
       padding: 10rem 2rem 4rem 2rem;
@@ -113,17 +121,15 @@
     .linkedin-icon {
       background-color: #0077b5;
     }
-
     .linkedin-icon:hover {
       background-color: #0095e0;
     }
 
     .doc-icon {
-  background-color: #0077b5;
+      background-color: #0077b5;
     }
-
-.doc-icon:hover {
-  background-color: #0095e0;
+    .doc-icon:hover {
+      background-color: #0095e0;
     }
 
     .linkedin-icon img, .doc-icon img {
@@ -143,12 +149,14 @@
 </head>
 <body>
 
+  <!-- ⭐ 已加入 Gallery，并设置 SAE Toolbox Team 为 active -->
   <nav>
     <div class="logo">NAU SAE Toolbox</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="project.html">The Project</a></li>
-      <li><a href="team.html">SAE Toolbox Team</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a class="active" href="team.html">SAE Toolbox Team</a></li>
       <li><a href="documents.html">Documents</a></li>
     </ul>
   </nav>
