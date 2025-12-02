@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SAE Toolbox Team</title>
+  <title>Project Description</title>
   <style>
     body {
       margin: 0;
@@ -44,194 +44,97 @@
       white-space: nowrap;
     }
 
-    /* ⭐ 当前页面高亮 */
+    /* ⭐ 当前页面高亮（带下划线） */
     .nav-links li a.active {
       color: white;
       border-bottom: 2px solid white;
       padding-bottom: 3px;
     }
 
-    header.hero {
+    .content {
+      max-width: 800px;
+      margin: 10rem auto 4rem auto;
+      padding: 0 2rem;
+      line-height: 1.8;
+    }
+    h1 {
       text-align: center;
-      padding: 10rem 2rem 4rem 2rem;
-      background-color: black;
-    }
-    header.hero h1 {
-      font-size: 3rem;
-      letter-spacing: 1.5px;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
     }
 
-    .team-section {
-      padding: 4rem 2rem;
-      background-color: #111;
+    .gallery {
+      max-width: 1100px;
+      margin: 0 auto 4rem auto;
+      padding: 0 2rem;
     }
-
-    .team-grid {
+    .gallery h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin: 2rem 0 1.5rem 0;
+      letter-spacing: .5px;
+    }
+    .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      max-width: 1000px;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
     }
-
-    .member-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #222;
-      padding: 1.5rem;
-      border-radius: 12px;
+    .grid img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.4);
+      display: block;
     }
-
-    .member-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .member-name {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: white;
-    }
-
-    .member-role {
-      font-size: 1rem;
-      color: #bbb;
-    }
-
-    .icon-group {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 0.3rem;
-    }
-
-    .linkedin-icon, .doc-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 4px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      transition: background-color 0.2s ease;
-    }
-
-    .linkedin-icon {
-      background-color: #0077b5;
-    }
-    .linkedin-icon:hover {
-      background-color: #0095e0;
-    }
-
-    .doc-icon {
-      background-color: #0077b5;
-    }
-    .doc-icon:hover {
-      background-color: #0095e0;
-    }
-
-    .linkedin-icon img, .doc-icon img {
-      width: 16px;
-      height: 16px;
-    }
-
-    .member-photo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: white;
-      background-size: cover;
-      background-position: center;
+    @media (max-width: 520px){
+      .grid img{ height: 200px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ⭐ 已加入 Gallery，并设置 SAE Toolbox Team 为 active -->
+  <!-- 顶部导航（本页 The Project 高亮） -->
   <nav>
     <div class="logo">NAU SAE Toolbox</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="project.html">The Project</a></li>
+      <li><a class="active" href="project.html">The Project</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a class="active" href="team.html">SAE Toolbox Team</a></li>
+      <li><a href="team.html">SAE Toolbox Team</a></li>
       <li><a href="documents.html">Documents</a></li>
     </ul>
   </nav>
 
-  <header class="hero">
-    <h1>Our Team</h1>
-  </header>
+  <div class="content">
+    <h1>Project Description</h1>
+    <p>This project originated from a request by the NAU SAE Formula and Baja teams to design and build a custom toolbox cart that could meet the demands of their off-road competition environments and on-campus workshop activities. The cart was intended to solve several logistical problems the teams encountered:</p>
+    <ul>
+      <li>Difficulties transporting tools over gravel, grass, and uneven terrain during competitions.</li>
+      <li>A lack of organized, lockable storage for tools, spare parts, and safety equipment.</li>
+      <li>No built-in method to carry a fire extinguisher, which is required in pit areas.</li>
+      <li>Limited access to power sources for charging devices or operating tools in remote settings.</li>
+      <li>The need for a compact and ergonomic design that a single team member could operate efficiently.</li>
+    </ul>
+    <p>To address these issues, our team applied core engineering principles to create a mobile, functional, and robust toolbox solution. The final product includes:</p>
+    <ul>
+      <li>A welded steel frame designed for durability and off-road use.</li>
+      <li>10-inch rugged casters for enhanced mobility across rough surfaces.</li>
+      <li>Multiple lockable drawers and compartments to organize tools.</li>
+      <li>A built-in mounting bracket for a fire extinguisher.</li>
+      <li>An optional space for a portable power generator.</li>
+      <li>Additional features such as a workbench surface, tire rack, and umbrella holder for shaded repairs.</li>
+    </ul>
+    <p>This project provided an opportunity to integrate CAD design, FEA analysis, and real-world fabrication into a solution tailored to the specific needs of NAU’s SAE teams.</p>
+  </div>
 
-  <section class="team-section">
-    <div class="team-grid">
-
-      <div class="member-box">
-        <div class="member-info">
-          <div class="member-name">Hailey Hein</div>
-          <div class="member-role">Project Manager, CAD Engineer, Financial Manager</div>
-          <div class="icon-group">
-            <a href="https://www.linkedin.com/in/hailey-hein-2a517826b/" target="_blank" class="linkedin-icon">
-              <img src="linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="HeinResume.pdf" target="_blank" class="doc-icon">
-              <img src="https://img.icons8.com/ios-filled/100/document.png" alt="Document">
-            </a>
-          </div>
-        </div>
-        <div class="member-photo" style="background-image: url('hailey.jpg');"></div>
-      </div>
-
-      <div class="member-box">
-        <div class="member-info">
-          <div class="member-name">Derek Griffith</div>
-          <div class="member-role">Prototype Engineer</div>
-          <div class="icon-group">
-            <a href="https://www.linkedin.com/in/derek-griffith-06a815256/" target="_blank" class="linkedin-icon">
-              <img src="linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="Derek.pdf" target="_blank" class="doc-icon">
-              <img src="https://img.icons8.com/ios-filled/100/document.png" alt="Document">
-            </a>
-          </div>
-        </div>
-        <div class="member-photo" style="background-image: url('derek.jpg');"></div>
-      </div>
-
-      <div class="member-box">
-        <div class="member-info">
-          <div class="member-name">Yanbo Wang</div>
-          <div class="member-role">Manufacturing Engineer, Website Manager</div>
-          <div class="icon-group">
-            <a href="https://www.linkedin.com/in/oneberry/" target="_blank" class="linkedin-icon">
-              <img src="linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="20250926 CV-Yanbo Wang.pdf" target="_blank" class="doc-icon">
-              <img src="https://img.icons8.com/ios-filled/100/document.png" alt="Document">
-            </a>
-          </div>
-        </div>
-        <div class="member-photo" style="background-image: url('yanbo.jpg');"></div>
-      </div>
-
-      <div class="member-box">
-        <div class="member-info">
-          <div class="member-name">Haoran Li</div>
-          <div class="member-role">Test Engineer</div>
-          <div class="icon-group">
-            <a href="https://www.linkedin.com/in/haoran-li-a18912369/" target="_blank" class="linkedin-icon">
-              <img src="linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="Haoran Li.pdf" target="_blank" class="doc-icon">
-              <img src="https://img.icons8.com/ios-filled/100/document.png" alt="Document">
-            </a>
-          </div>
-        </div>
-        <div class="member-photo" style="background-image: url('haoran.jpg');"></div>
-      </div>
-
+  <!-- CAD Design Gallery -->
+  <section class="gallery">
+    <h2>CAD Design Gallery</h2>
+    <div class="grid">
+      <img src="IMG_4020.jpg">
+      <img src="Screenshot 2025-10-19 120543.png">
+      <img src="Screenshot 2025-10-19 122350.png">
     </div>
   </section>
 
