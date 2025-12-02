@@ -41,6 +41,11 @@
       font-weight: bold;
       font-size: 1rem;
     }
+    .nav-links li a.active {
+      color: white;
+      border-bottom: 2px solid white;
+      padding-bottom: 3px;
+    }
     .container {
       padding-top: 7rem;
       text-align: center;
@@ -69,13 +74,15 @@
 </head>
 <body>
 
+  <!-- ⭐ 已加入 Gallery，并设置 Documents 为 active -->
   <nav>
     <div class="logo">NAU SAE Toolbox</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="project.html">The Project</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="team.html">SAE Toolbox Team</a></li>
-      <li><a href="documents.html">Documents</a></li>
+      <li><a class="active" href="documents.html">Documents</a></li>
     </ul>
   </nav>
 
